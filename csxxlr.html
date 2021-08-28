@@ -1,0 +1,153 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+	<head>
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<title>无标题文档</title>
+		<link href="css/style.css" rel="stylesheet" type="text/css" />
+		<link href="css/select.css" rel="stylesheet" type="text/css" />
+		<script type="text/javascript" src="js/jquery.js"></script>
+		<script type="text/javascript" src="js/jquery.idTabs.min.js"></script>
+		<script type="text/javascript" src="js/select-ui.min.js"></script>
+		<script type="text/javascript" src="editor/kindeditor.js"></script>
+
+		<script type="text/javascript">
+			KE.show({
+				id: 'content7',
+				cssPath: './index.css'
+			});
+		</script>
+
+		<script type="text/javascript">
+			$(document).ready(function(e) {
+				$(".select1").uedSelect({
+					width: 345
+				});
+				$(".select2").uedSelect({
+					width: 167
+				});
+				$(".select3").uedSelect({
+					width: 100
+				});
+			});
+		</script>
+		<script>
+			function zy(){
+				var zyy=document.getElementById("zyname").value;
+				var zyyTip=document.getElementById("zynameTip");
+				var reg=/^[\u4e00-\u9fa5]{2,6}$/;
+				if (!reg.test(zyy)){
+					zyyTip.innerHTML="姓名不合法！";
+					zyyTip.style="color:red";
+				}
+				else{
+					zyyTip.innerHTML="";
+				}
+			}
+
+			function xmm(){
+				var xmm=document.getElementById("xname").value;
+				var xmmtip=document.getElementById("xnameTip");
+				var rcg=/^[\u4e00-\u9fa5]{2,6}$/;
+				if (!rcg.test(xmm)){
+					xmmtip.innerHTML="姓名不合法！";
+					xmmtip.style="color:red";
+				}
+				else{
+					xmmtip.innerHTML="";
+				}
+			}
+			function jszt(){
+				var jsztt=document.getElementById("jszt").value;
+				var jsztttip=document.getElementById("jsztTip");
+				var rcg=/^[\u4e00-\u9fa5a-zA-Z]{2,30}$/;
+				if (!rcg.test(jsztt)){
+					jsztttip.innerHTML="题目不合法！";
+					jsztttip.style="color:red";
+				}
+				else{
+					jsztttip.innerHTML="";
+				}
+			}
+			function zdls(){
+				var zdlss=document.getElementById("zdlsname").value;
+				var zdlsstip=document.getElementById("zdlsnameTip");
+				var rcg=/^[\u4e00-\u9fa5]{2,6}$/;
+				if (!rcg.test(zdlss)){
+					zdlsstip.innerHTML="姓名不合法！";
+					zdlsstip.style="color:red";
+				}
+				else{
+					zdlsstip.innerHTML="";
+				}
+			}
+		</script>
+	</head>
+
+	<body>
+
+		<div class="place">
+			<span>位置：</span>
+			<ul class="placeul">
+				<li>
+					<a href="#">首页</a>
+				</li>
+				<li>
+					<a href="#">参赛信息录入</a>
+				</li>
+			</ul>
+		</div>
+
+		<div class="formbody">
+
+			<div id="tab1" class="tabson">
+				<ul class="forminfo">
+					<li>
+						<label>竞赛类别<b>*</b></label>
+						<input placeholder="请输入竞赛类别" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>年度<b>*</b></label>
+						<input placeholder="请输入参赛年度" name="classid" type="text" class="dfinput" style="width:345px;" />
+					</li>
+					<li>
+						<label>题目<b>*</b></label>
+						<input placeholder="2-30个字母和汉字" onblur="jszt()" id="jszt" name="classid" type="text" class="dfinput" style="width:345px;" />
+						<i id="jsztTip"></i>
+					</li>
+					<li>
+						<label>组长<b>*</b></label>
+						<input placeholder="2-6个汉字" onblur="xmm()" id="xname" name="classid" type="text" class="dfinput" style="width:345px;" />
+						<i id="xnameTip"></i>
+					</li>
+					<li>
+						<label>组员<b>*</b></label>
+						<input placeholder="2-6个汉字" onblur="zy()" id="zyname" name="classid" type="text" class="dfinput" style="width:345px;" />
+						<i id="zynameTip"></i>
+					</li>
+					<li>
+						<label >获奖等级<b>*</b></label>
+						<div class="vocation">
+					 <select  class="select1">
+							<option>无</option>
+							<option>特等</option>
+							<option>一等</option>
+							<option>二等</option>
+							<option>三等</option>
+							<option>优秀奖</option>
+						</select>	
+						</div>
+					</li>
+					<li>
+						<label>指导老师<b>*</b></label>
+						<input placeholder="2-6个汉字" onblur="zdls()" id="zdlsname" name="classid" type="text" class="dfinput" style="width:345px;" />
+						<i id="zdlsnameTip"></i>
+					</li>
+					
+				</ul>
+
+			</div>
+
+	</body>
+
+</html>
